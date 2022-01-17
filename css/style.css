@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.container{
+    width: 375px;
+    height: 812px;
+    margin: auto;
+    background-color: #FF5252;
+    font-family: Roboto;
+}
+.transleitor{
+    margin-left: 0;
+    font-size: 20px;
+}
+a:hover{
+    background-color: violet;
+}
+.transleitor a{
+    text-decoration: none;
+    color: white;
+}
+.bomba{
+    width: 119px;
+    height: 66px;
+    margin-top: 40px;
+    margin-left: 150px;
+}
+input{
+    width: 334px; height: 45px; margin: 20px;
+    border: none; font-size: 18px;
+    border-radius: 10px;  padding: 5px;
+    padding-left: 20px !important;
+    box-sizing: border-box;
+}
+.senha{ text-align: center;}
+button{
+    width: 336px;
+    height: 45px;
+    border: none;
+    margin: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.btn-entrar{  background-color: #FFC501;}
+.btn-cadastrar{ background-color: #0DE5A8;}
+.informacoes{
+    width: 86%; height: 15%;
+    margin-left: 20px;
+    padding: 5px;
+    border: 0;
+    border-radius: 10px;
+    text-align: left;
+    background-color: #DCE0E6;
+}
+p{  margin-left: 23px;  margin-bottom: -1px;}
+.car-vermelho{  width: 180px;  height: 150px; margin-left: 2px;}
+.car-amarelo{  width: 180px;   height: 101px; margin-bottom: 15px; }

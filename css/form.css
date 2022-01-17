@@ -1,0 +1,43 @@
+.container{
+    width: 375px;
+    height: 812px;
+    margin: auto;
+    background-color: #FF5252;
+    font-family: Roboto;
+}
+.bomba{
+    width: 119px;
+    height: 66px;
+    margin-top: 40px;
+    margin-left: 150px;
+}
+label{  
+    margin-left: 20px;
+}
+input{
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+    float: left;
+}
+.box-left{
+    width: 50%;
+    height: 300px;
+    float: left;
+}
+.box-right{
+    width: 50%; float: left;
+    height: 300px;
+    height: auto; float: left;
+}
+.input-small{
+    width: 135px;
+    float: left;
+    margin-bottom: 10px !important;
+    margin-bottom: 0;
+}
+.p-cima{ padding-top: -10px; margin-left: 20px;}
+.informacoes{
+    height: 70px !important;
+}
