@@ -1,29 +1,3 @@
-let abastecer = document.querySelector('#abastecer').value
-
-let valor_gasolina = document.querySelector('#valor_gasolina').value
-let lt_gasolina = parseFloat(document.querySelector('#lt_gasolina'))
-
-let valor_alcool = document.querySelector('#valor_alcool')
-let lt_alcool = document.querySelector('#lt_alcool').value
-
-let media_gasolina = document.querySelector('#media_gasolina').value
-let media_alcool = document.querySelector('#media_alcool').value
-
-let km_gasolina = document.querySelector('#km_gasolina').value
-let km_alcool = document.querySelector('#km_alcool').value
-
-console.log(
-    abastecer + '\n' +
-    valor_gasolina + '\n' +
-    lt_gasolina + '\n' +
-    valor_alcool + '\n' +
-    lt_alcool + '\n' +
-    media_gasolina + '\n' +
-    media_alcool + '\n' +
-    km_gasolina + '\n' +
-    km_alcool
-);
-
 
 // Processamento da informação
 console.log('\n \n')
@@ -32,18 +6,57 @@ console.log('\n \n')
 
 document.querySelector('#calcula').addEventListener("click", function(event) {
     event.preventDefault()
+    let rs = document.querySelector('#rs')
 
-    if(lt_gasolina.value == '100'){
-        console.log('1')
-    }
-    if(lt_gasolina.value == 100){
-        console.log('2')
+// Caclcula gasolina
+    let abastecer = parseFloat(document.querySelector('#abastecer').value)
+
+    let valor_gasolina = parseFloat(document.querySelector('#valor_gasolina').value)
+    let media_gasolina = parseFloat(document.querySelector('#media_gasolina').value)
+
+    let lt_gasolina = document.querySelector('#lt_gasolina')
+    let km_gasolina = document.querySelector('#km_gasolina')
+
+    
+    let calc_listros_gasolina = (abastecer / valor_gasolina).toFixed(2)
+    lt_gasolina.value = calc_listros_gasolina
+
+    // Resultado na Gasolina
+    km_gasolina.value = (lt_gasolina.value * media_gasolina).toFixed(2)
+
+    //console.log('Resultado na gasolina: ' + km_gasolina.value)
+// Fim Caclcula gasolina
+
+// Calcula Alcool
+    let valor_alcool = parseFloat(document.querySelector('#valor_alcool').value)
+    let media_alcool = parseFloat(document.querySelector('#media_alcool').value)
+
+    let lt_alcool = document.querySelector('#lt_alcool')
+    let km_alcool = document.querySelector('#km_alcool')
+
+    let calc_listros_alcool = (abastecer / valor_alcool).toFixed(2)
+    lt_alcool.value = calc_listros_alcool
+
+    // Resultado no alcool
+    km_alcool.value = (lt_alcool.value * media_alcool).toFixed(2)
+
+    //console.log('Resultado no alcool: ' + km_alcool.value)
+// Fim Calcula Alcool
+
+    let diferenca = (km_gasolina.value - km_alcool.value)
+
+    //regex = regex.replaceAll("[^0-9]", "");
+
+    if( km_gasolina.value > km_alcool.value ){
+        let msn_gasolina = 'Melhor rodar na Gasolina roda \n ' + Math.abs(diferenca.toFixed(2))
+        rs.textContent = msn_gasolina
+        return
     }else{
-        console.log('tente outra coisa')
+        let msn_alcool = 'Melhor rodar no Alcool roda  \n ' + Math.abs(diferenca.toFixed(2))
+        rs.textContent = msn_alcool
     }
+
 })
-
-
 // lt_gasolina = abastecer / valor_gasolina
 // lt_gasolina1 = lt_gasolina.toFixed(2)
 // console.log(valor_gasolina)
