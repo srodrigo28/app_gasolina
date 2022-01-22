@@ -1,20 +1,21 @@
-email = document.querySelector('#email').value;
-senha = document.querySelector('#senha').value;
+// vem do formulario html
+var txt_email = document.querySelector('#email').value;
+var txt_senha = document.querySelector('#senha').value;
 
-// var form = document.querySelector('#form');
+// usuário cadastrado
+var user = "admin@gmail.com"
+var senha = "123"
 
-function pegar(){
-    if(email == ''){
-        console.log('Precisa preencher o E-mail')
-    }
-    if(senha == ''){
-        console.log('Precisa preencher a senha')
-    }
-    console.log(email, senha)
+console.log(txt_email + '\n' + txt_senha + '\n \n')
+
+if( txt_email == user ){
+    console.log('Usuário Valido')
+}else{
+    console.log('Usuário não encontrado')
 }
 
-var titulo = document.querySelector(".titulo");
-
-titulo.addEventListener("click", function(){
-    console.log('Olha só posso chamar uma função anonima.')
-});
+if( txt_senha == senha ){
+    console.log('Senha Valido')
+}else{
+    console.log('Senha inválida')
+}
