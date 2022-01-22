@@ -1,13 +1,15 @@
+*{margin: 0px; padding: 0px}
 .container{
-    width: 375px;
-    height: 812px;
+    width: 100vw;
+    height: 100vh;
     margin: auto;
+    padding-top: 20px;
     background-color: #FF5252;
     font-family: Roboto;
 }
 .bomba{
-    width: 119px;
-    height: 66px;
+    width: 170px;
+    height: 146px;
     margin-top: 40px;
     margin-left: 150px;
 }
@@ -39,5 +41,6 @@ input{
 }
 .p-cima{ padding-top: -10px; margin-left: 20px;}
 .informacoes{
-    height: 130px !important;
+    padding: 10px;
+    height: 25px !important;
 }

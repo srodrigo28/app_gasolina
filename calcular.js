@@ -48,11 +48,11 @@ document.querySelector('#calcula').addEventListener("click", function(event) {
     //regex = regex.replaceAll("[^0-9]", "");
 
     if( km_gasolina.value > km_alcool.value ){
-        let msn_gasolina = 'Melhor rodar na Gasolina roda \n ' + Math.abs(diferenca.toFixed(2))
+        let msn_gasolina = 'Melhor rodar na Gasolina roda ' + Math.abs(diferenca.toFixed(2)) + ' km +'
         rs.textContent = msn_gasolina
         return
     }else{
-        let msn_alcool = 'Melhor rodar no Alcool roda  \n ' + Math.abs(diferenca.toFixed(2))
+        let msn_alcool = 'Melhor rodar no Alcool roda  ' + Math.abs(diferenca.toFixed(2)) + ' km +'
         rs.textContent = msn_alcool
     }
 
@@ -60,3 +60,17 @@ document.querySelector('#calcula').addEventListener("click", function(event) {
 // lt_gasolina = abastecer / valor_gasolina
 // lt_gasolina1 = lt_gasolina.toFixed(2)
 // console.log(valor_gasolina)
+
+function limpar(){
+
+    console.log('fui chamada ....')
+    abastecer.value = ''
+    media_gasolina.value = ''
+    media_alcool.value = ''
+    valor_gasolina.value = ''
+    valor_alcool.value = ''
+
+    rs.textContent = ''
+    
+    
+}
