@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
+    <title>Posto BR</title>
+</head>
+<body>
+    <form class="container" id="form-user-create">
+        <br>
+        <label> Valor Abastecer R$</label><br>
+        <input class="form-input" type="number" name="abastecer" id="abastecer" placeholder="R$ 0,00" >
+        
+        <div class="box-left">
+            <label> Valor Gasolina</label><br>
+            <input class="form-input input-small" type="number" name="valor_gasolina" id="valor_gasolina" placeholder="R$ 0,00" >
+
+            <label> Litros / Valor Gas.</label><br>
+            <input class="form-input input-small" type="number" name="lt_gasolina" id="lt_gasolina" disabled>
+
+            <label> Média na Gasolina </label><br>
+            <input class="form-input input-small" type="number" name="media_gasolina" id="media_gasolina" placeholder="Km Média" >
+
+            <label> Gasolina faz KM. </label><br>
+            <input class="form-input input-small" type="number" name="km_gasolina" id="km_gasolina" disabled>
+            <button id="calcula" class="input-small">Calcular</button>
+        </div>
+        
+        <div class="box-right">
+            <label> Valor Álcool R$</label><br>
+            <input class="form-input input-small" type="number" name="valor_alcool" id="valor_alcool" placeholder="R$ 0,00" >
+
+            <label> R$ por Litros Álco.</label><br>
+            <input class="form-input input-small" type="number" name="lt_alcool" id="lt_alcool" disabled >
+
+            <label> Faz no Álcool.</label><br>
+            <input class="form-input input-small" type="number" name="media_alcool" id="media_alcool" placeholder="KM Média" >
+
+            <label>Álcool faz KM.</label><br>
+            <input class="form-input input-small" type="number" name="km_alcool" id="km_alcool" disabled >
+            <button class="input-small" onclick="limpar()">Limpar</button>
+        </div>
+        
+        <p style="color: white;">Melhor resultado combustivel</p>
+        <div class="informacoes">
+            <span id="rs" style="font-weight: bold;"> </span>
+        </div>
+
+        <!-- <img class="car-vermelho" src="img/carroVermelho.png" alt="Carro vermelho">
+        <img class="car-amarelo" src="img/carroAmarelo.png" alt="Carro amarelo"> -->
+    </form>
+    <script src="./hcode.js"></script>
+        
+</body>
+</html>
