@@ -14,39 +14,39 @@
             |
             <a href="ingles.html"><span> Inglês </span> </a>
         </p> -->
-        <img class="bomba"  src="img/bomba.png" alt="Imagem"/>
+        <!-- <img class="bomba"  src="img/bomba.png" alt="Imagem"/> -->
         <br>
         
         <label> Valor Abastecer R$</label><br>
-        <input class="form-input" type="text" name="" id="abastecer" placeholder="R$ 0,00" >
+        <input class="form-input" type="number" name="" id="abastecer" placeholder="R$ 0,00" >
         
         <div class="box-left">
             <label> Valor Gasolina</label><br>
-            <input class="form-input input-small" type="text" name="" id="valor_gasolina" placeholder="R$ 0,00" >
+            <input class="form-input input-small" type="number" name="" id="valor_gasolina" placeholder="R$ 0,00" >
 
             <label> Litros / Valor Gas.</label><br>
-            <input class="form-input input-small" type="text" name="" id="lt_gasolina" disabled>
+            <input class="form-input input-small" type="number" name="" id="lt_gasolina" disabled>
 
             <label> Média na Gasolina </label><br>
-            <input class="form-input input-small" type="text" name="" id="media_gasolina" placeholder="Km Média" >
+            <input class="form-input input-small" type="number" name="" id="media_gasolina" placeholder="Km Média" >
 
             <label> Gasolina faz KM. </label><br>
-            <input class="form-input input-small" type="text" name="" id="km_gasolina" disabled>
+            <input class="form-input input-small" type="number" name="" id="km_gasolina" disabled>
             <button id="calcula" class="input-small">Calcular</button>
         </div>
         
         <div class="box-right">
             <label> Valor Álcool R$</label><br>
-            <input class="form-input input-small" type="text" name="" id="valor_alcool" placeholder="R$ 0,00" >
+            <input class="form-input input-small" type="number" name="" id="valor_alcool" placeholder="R$ 0,00" >
 
             <label> R$ por Litros Álco.</label><br>
-            <input class="form-input input-small" type="text" name="" id="lt_alcool" disabled >
+            <input class="form-input input-small" type="number" name="" id="lt_alcool" disabled >
 
             <label> Faz no Álcool.</label><br>
-            <input class="form-input input-small" type="text" name="" id="media_alcool" placeholder="KM Média" >
+            <input class="form-input input-small" type="number" name="" id="media_alcool" placeholder="KM Média" >
 
             <label>Álcool faz KM.</label><br>
-            <input class="form-input input-small" type="text" name="" id="km_alcool" disabled >
+            <input class="form-input input-small" type="number" name="" id="km_alcool" disabled >
             <button class="input-small" onclick="limpar()">Limpar</button>
         </div>
         
@@ -55,8 +55,8 @@
             <span id="rs" style="font-weight: bold;"> </span>
         </div>
 
-        <img class="car-vermelho" src="img/carroVermelho.png" alt="Carro vermelho">
-        <img class="car-amarelo" src="img/carroAmarelo.png" alt="Carro amarelo">
+        <!-- <img class="car-vermelho" src="img/carroVermelho.png" alt="Carro vermelho">
+        <img class="car-amarelo" src="img/carroAmarelo.png" alt="Carro amarelo"> -->
     </div>
     <style>
         /** Style CSS*/
@@ -166,6 +166,82 @@
             }
 
     </style>
-    <script src="./calcular.js"></script>
+    <!-- <script src="./calcular.js"></script> -->
+    <script>
+        
+// Processamento da informação
+console.log('\n \n')
+
+// const input = document.querySelector('input');
+
+document.querySelector('#calcula').addEventListener("click", function(event) {
+    event.preventDefault()
+    let rs = document.querySelector('#rs')
+
+// Caclcula gasolina
+    let abastecer = parseFloat(document.querySelector('#abastecer').value)
+
+    let valor_gasolina = parseFloat(document.querySelector('#valor_gasolina').value)
+    let media_gasolina = parseFloat(document.querySelector('#media_gasolina').value)
+
+    let lt_gasolina = document.querySelector('#lt_gasolina')
+    let km_gasolina = document.querySelector('#km_gasolina')
+
+    
+    let calc_listros_gasolina = (abastecer / valor_gasolina).toFixed(2)
+    lt_gasolina.value = calc_listros_gasolina
+
+    // Resultado na Gasolina
+    km_gasolina.value = (lt_gasolina.value * media_gasolina).toFixed(2)
+
+    //console.log('Resultado na gasolina: ' + km_gasolina.value)
+// Fim Caclcula gasolina
+
+// Calcula Alcool
+    let valor_alcool = parseFloat(document.querySelector('#valor_alcool').value)
+    let media_alcool = parseFloat(document.querySelector('#media_alcool').value)
+
+    let lt_alcool = document.querySelector('#lt_alcool')
+    let km_alcool = document.querySelector('#km_alcool')
+
+    let calc_listros_alcool = (abastecer / valor_alcool).toFixed(2)
+    lt_alcool.value = calc_listros_alcool
+
+    // Resultado no alcool
+    km_alcool.value = (lt_alcool.value * media_alcool).toFixed(2)
+
+    //console.log('Resultado no alcool: ' + km_alcool.value)
+// Fim Calcula Alcool
+
+    let diferenca = (km_gasolina.value - km_alcool.value)
+
+    //regex = regex.replaceAll("[^0-9]", "");
+
+    if( km_gasolina.value > km_alcool.value ){
+        let msn_gasolina = 'Melhor rodar na Gasolina roda ' + Math.abs(diferenca.toFixed(2)) + ' km +'
+        rs.textContent = msn_gasolina
+        return
+    }else{
+        let msn_alcool = 'Melhor rodar no Alcool roda  ' + Math.abs(diferenca.toFixed(2)) + ' km +'
+        rs.textContent = msn_alcool
+    }
+
+})
+// lt_gasolina = abastecer / valor_gasolina
+// lt_gasolina1 = lt_gasolina.toFixed(2)
+// console.log(valor_gasolina)
+
+function limpar(){
+
+    console.log('fui chamada ....')
+    abastecer.value = ''
+    media_gasolina.value = ''
+    media_alcool.value = ''
+    valor_gasolina.value = ''
+    valor_alcool.value = ''
+
+    rs.textContent = ''
+}
+    </script>
 </body>
 </html>

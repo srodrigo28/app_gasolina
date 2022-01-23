@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto BR</title>
+</head>
+<body>
+    <form class="container" id="form-user-create">
+        <!-- <p class="transleitor">
+            <a href="brasil.html"><span> Brasil </span> </a>
+            |
+            <a href="ingles.html"><span> Inglês </span> </a>
+        </p> -->
+        <!-- <img class="bomba"  src="img/bomba.png" alt="Imagem"/> -->
+        <br>
+        
+        <label> Valor Abastecer R$</label><br>
+        <input class="form-input" type="number" name="abastecer" id="abastecer" placeholder="R$ 0,00" >
+        
+        <div class="box-left">
+            <label> Valor Gasolina</label><br>
+            <input class="form-input input-small" type="number" name="valor_gasolina" id="valor_gasolina" placeholder="R$ 0,00" >
+
+            <label> Litros / Valor Gas.</label><br>
+            <input class="form-input input-small" type="number" name="lt_gasolina" id="lt_gasolina" disabled>
+
+            <label> Média na Gasolina </label><br>
+            <input class="form-input input-small" type="number" name="media_gasolina" id="media_gasolina" placeholder="Km Média" >
+
+            <label> Gasolina faz KM. </label><br>
+            <input class="form-input input-small" type="number" name="km_gasolina" id="km_gasolina" disabled>
+            <button id="calcula" class="input-small">Calcular</button>
+        </div>
+        
+        <div class="box-right">
+            <label> Valor Álcool R$</label><br>
+            <input class="form-input input-small" type="number" name="valor_alcool" id="valor_alcool" placeholder="R$ 0,00" >
+
+            <label> R$ por Litros Álco.</label><br>
+            <input class="form-input input-small" type="number" name="lt_alcool" id="lt_alcool" disabled >
+
+            <label> Faz no Álcool.</label><br>
+            <input class="form-input input-small" type="number" name="media_alcool" id="media_alcool" placeholder="KM Média" >
+
+            <label>Álcool faz KM.</label><br>
+            <input class="form-input input-small" type="number" name="km_alcool" id="km_alcool" disabled >
+            <button class="input-small" onclick="limpar()">Limpar</button>
+        </div>
+        
+        <p style="color: white;">Melhor resultado combustivel</p>
+        <div class="informacoes">
+            <span id="rs" style="font-weight: bold;"> </span>
+        </div>
+
+        <!-- <img class="car-vermelho" src="img/carroVermelho.png" alt="Carro vermelho">
+        <img class="car-amarelo" src="img/carroAmarelo.png" alt="Carro amarelo"> -->
+    </form>
+    <style>
+        /** Style CSS*/
+        *{margin: 0px; padding: 0px}
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+            .container{
+                width: 375px;
+                height: 812px;
+                margin: auto;
+                background-color: #FF5252;
+                font-family: Roboto;
+            }
+            .transleitor{
+                margin-left: 0;
+                font-size: 20px;
+            }
+            a:hover{
+                background-color: violet;
+            }
+            .transleitor a{
+                text-decoration: none;
+                color: white;
+            }
+            .bomba{
+                width: 119px;
+                height: 66px;
+                margin-top: 40px;
+                margin-left: 150px;
+            }
+            input{
+                width: 334px; height: 45px; margin: 20px;
+                border: none; font-size: 18px;
+                border-radius: 10px;  padding: 5px;
+                padding-left: 20px !important;
+                box-sizing: border-box;
+            }
+            .senha{ text-align: center;}
+            button{
+                width: 336px;
+                height: 45px;
+                border: none;
+                margin: 20px;
+                border-radius: 10px;
+                font-size: 18px;
+            }
+            .btn-entrar{  background-color: #FFC501;}
+            .btn-cadastrar{ background-color: #0DE5A8;}
+            .informacoes{
+                width: 86%; height: 15%;
+                margin-left: 20px;
+                padding: 5px;
+                border: 0;
+                border-radius: 10px;
+                text-align: left;
+                background-color: #DCE0E6;
+            }
+            p{  margin-left: 23px;  margin-bottom: -1px;}
+            .car-vermelho{  width: 180px;  height: 150px; margin-left: 2px;}
+            .car-amarelo{  width: 180px;   height: 101px; margin-bottom: 15px; }
+
+            /** Form CSS*/
+            
+            .container{
+                width: 100vw;
+                height: 100vh;
+                margin: auto;
+                padding-top: 20px;
+                background-color: #FF5252;
+                font-family: Roboto;
+            }
+            .bomba{
+                width: 170px;
+                height: 146px;
+                margin-top: 40px;
+                margin-left: 150px;
+            }
+            label{  
+                margin-left: 20px;
+            }
+            input{
+                margin-top: 0;
+                margin-bottom: 10px;
+                text-align: center;
+                font-size: 18px;
+                float: left;
+            }
+            .box-left{
+                width: 50%;
+                height: 300px;
+                float: left;
+            }
+            .box-right{
+                width: 50%; float: left;
+                height: 300px;
+                height: auto; float: left;
+            }
+            .input-small{
+                width: 135px;
+                float: left;
+                margin-bottom: 10px !important;
+                margin-bottom: 0;
+            }
+            .p-cima{ padding-top: -10px; margin-left: 20px;}
+            .informacoes{
+                padding: 10px;
+                height: 25px !important;
+            }
+    </style>
+    <script src="./hcode.js"></script>
+        
+</body>
+</html>

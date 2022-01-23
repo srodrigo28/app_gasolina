@@ -17,7 +17,6 @@ document.querySelector('#calcula').addEventListener("click", function(event) {
     let lt_gasolina = document.querySelector('#lt_gasolina')
     let km_gasolina = document.querySelector('#km_gasolina')
 
-    
     let calc_listros_gasolina = (abastecer / valor_gasolina).toFixed(2)
     lt_gasolina.value = calc_listros_gasolina
 
@@ -71,6 +70,4 @@ function limpar(){
     valor_alcool.value = ''
 
     rs.textContent = ''
-    
-    
 }
